@@ -27,8 +27,13 @@ function App() {
       setSensors(response.data.sensors);
       setError('');
     } catch (err) {
-      setError('Unable to connect to backend server.');
-    } finally {
+  console.log('API ERROR:', err);
+  setError(
+    err.response?.data?.message ||
+    err.message ||
+    'Backend connection failed'
+  );
+} finally {
       setLoading(false);
     }
   };
