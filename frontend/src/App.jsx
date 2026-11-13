@@ -11,9 +11,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
-const API_URL =
-  import.meta.env.VITE_API_URL || 'http://localhost:5000';
-
+const API_URL = 'https://iot-sensor-data-anomaly-monitoring.vercel.app';
 function App() {
   const [sensors, setSensors] = useState([]);
   const [deviceId, setDeviceId] = useState('');
